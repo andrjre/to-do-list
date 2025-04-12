@@ -6,10 +6,23 @@ body{
 }
 
 header{
-    text-align: center;
-    font-size: 100px;
+    display: flex;
+    gap:10px;
+    align-items: center;
 }
 
+#dark-mode{
+    width:50;
+    height:50px
+}
+
+
+.top{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+}
 
 .checkboxes{
     margin-top: 50px;
@@ -44,12 +57,6 @@ header{
 
 }
 
-.top{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap:20px;
-}
 
 .box-container{
     display: flex;
@@ -86,7 +93,7 @@ header{
     gap:20px
 }
 
-.type{
+.input{
     border-radius: 20px;
 }
 

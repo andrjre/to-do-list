@@ -8,7 +8,10 @@
 <body>
 
     <div class="top">
-        <header>To-Do List</header>
+        <header>
+            <h1>To-Do List</h1>
+            <button id="dark-mode">Dark mode</button>
+        </header>
         <button id="create">+</button>
     </div>
 
@@ -23,11 +26,11 @@
                 <div id="user-input">
                     <div id="pair">
                         <p>Name</p>
-                        <input type="text" class="type">
+                        <input type="text" class="input" id="type">
                     </div>
                     <div id="pair">
                         <p>Due By</p>
-                        <input type="date" class="type">
+                        <input type="date" class="input" id="date">
                     </div>
                 </div>
                 <button id="submit">Submit</button>
