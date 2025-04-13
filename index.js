@@ -30,8 +30,6 @@ submit.onclick = function(){
     date = document.getElementById("date").value;
     time = document.getElementById("time").value;
 
-    
-
     console.log(type)
     console.log(date)
     console.log(time)
@@ -58,8 +56,13 @@ submit.onclick = function(){
     let newTaskTime = document.createElement("h2")
     newTaskTime.id = "taskTime"
 
-   
-    newTaskTime.textContent = (`${time} on ${date}`);
+    if(document.getElementById("date").value === "" && document.getElementById("time").value === ""){
+        console.log("gello empt")
+        newTaskTime.textContent = ""
+    }
+    else{
+        newTaskTime.textContent = (`${time}               ${date}`);
+    }
 
     //make unable to create blank task
     //make name required but not date and time
