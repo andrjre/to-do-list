@@ -57,8 +57,13 @@ submit.onclick = function(){
 
     let newTaskTime = document.createElement("h2")
     newTaskTime.id = "taskTime"
+
+   
     newTaskTime.textContent = (`${time} on ${date}`);
 
+    //make unable to create blank task
+    //make name required but not date and time
+    // remove "on" when created without date and time
     
     checkboxes.appendChild(newWholeTask)
     newWholeTask.appendChild(newCheckbox)
