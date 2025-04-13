@@ -26,7 +26,7 @@ header{
     gap:20px;
 }
 
-.checkboxes{
+#checkboxes{
     margin-top: 50px;
     display: flex;
     align-items: start;
@@ -34,8 +34,8 @@ header{
 }
 
 .checkbox{
-    width: 100px;
-    height:40px;
+    width: 150px;
+    height:150px;
     border-radius: 100px;
 }
 

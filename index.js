@@ -6,27 +6,21 @@ let body = document.body;
 let type
 let date
 let time
+let checkboxCreate 
 popup.style.display = "none";
 
 let darkMode = document.getElementById("darkMode")
 let lightMode = document.getElementById("darkMode")
 
 create.onclick = function(){
+    
+    document.getElementById("type").value = null;
+    date = document.getElementById("date").value = null;
+    time = document.getElementById("time").value = null;
+
+
     popup.style.display = "";
 }
-
-
-if(document.getElementById("type").value !== "0"){
-    console.log("nooo")
-    document.getElementById("submit").disabled = false;
-    document.getElementById("submit").style.backgroundColor = "green"
-}
-if(document.getElementById("type").value == "0"){
-    console.log("gello")
-    document.getElementById("submit").disabled = true;
-    document.getElementById("submit").style.backgroundColor = "red"
-}
-//somethign weird with this bit 
 
 
 submit.onclick = function(){
@@ -36,13 +30,22 @@ submit.onclick = function(){
     date = document.getElementById("date").value;
     time = document.getElementById("time").value;
 
-    
-
     console.log(type)
     console.log(date)
     console.log(time)
 
-    document.createElement("div")
+    let checkboxContainer = document.getElementById("checkboxes")
+   
+    let newCheckbox = document.createElement("input");
+    newCheckbox.type = "checkbox"
+
+
+    checkboxContainer.appendChild(newCheckbox)
+    newCheckbox.style.backgroundColor = "red"
+    newCheckbox.classList.add("checkbox")
+
+
+  
 }
 
 darkMode.onclick = function(){
