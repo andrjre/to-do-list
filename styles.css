@@ -39,6 +39,18 @@ header{
     border-radius: 100px;
 }
 
+#wholeTask{
+    display: flex;
+    gap:20px;
+}
+
+#taskText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
 #create{
     background-color: rgb(60, 207, 60);
     border:0;
