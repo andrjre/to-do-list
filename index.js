@@ -12,8 +12,11 @@ let taskText = document.getElementById("taskText")
 let taskName = document.getElementById("taskTime")
 let taskTime = document.getElementById("taskTime") 
 let edit = document.getElementById("edit")
+let remove = document.getElementById("remove")
+let customize = document.getElementById("customize")
 popup.style.display = "none";
 edit.style.display = "none"
+remove.style.display = "none"
 
 create.onclick = function(){
     
@@ -52,29 +55,37 @@ submit.onclick = function(){
     let newTaskTime = document.createElement("h2")
     newTaskTime.id = "taskTime"
 
+    let newCustomize = document.createElement("div")
+    newCustomize. id = "customize"
+
     let newEdit = document.createElement("div")
     newEdit.id = "edit"
 
+    let newRemove = document.createElement("div")
+    newEdit.id = "remove"
+
+
     if(document.getElementById("date").value === "" && document.getElementById("time").value === ""){
-        console.log("gello empt")
         newTaskTime.textContent = ""
     }
     else{
         newTaskTime.textContent = (`${time} ${date}`);
     }
-
-    //make unable to create blank task
-    //make name required but not date and time
+    
     edit.style.display = ""
+    remove.style.display = ""
     
     checkboxes.appendChild(newWholeTask)
     newWholeTask.appendChild(newCheckbox)
     newWholeTask.appendChild(newTaskText)
-    newWholeTask.appendChild(edit)
+    newWholeTask.appendChild(newCustomize)
+    newCustomize.appendChild(edit)
+    newCustomize.appendChild(remove)
     newTaskText.appendChild(newTaskName)
     newTaskText.appendChild(newTaskTime)
     newCheckbox.classList.add("checkbox")
 
+    
     let arr = [type, date, time]
     console.log(arr)
 
