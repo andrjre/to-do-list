@@ -6,18 +6,20 @@ let body = document.body;
 let type
 let date
 let time
-let checkboxCreate 
+let checkboxCreate
+let wholeTask = document.getElementById("wholeTask")
+let taskText = document.getElementById("taskText")
+let taskName = document.getElementById("taskTime")
+let taskTime = document.getElementById("taskTime") 
+let edit = document.getElementById("edit")
 popup.style.display = "none";
-
-let darkMode = document.getElementById("darkMode")
-let lightMode = document.getElementById("darkMode")
+edit.style.display = "none"
 
 create.onclick = function(){
     
     document.getElementById("type").value = null;
     date = document.getElementById("date").value = null;
     time = document.getElementById("time").value = null;
-
 
     popup.style.display = "";
 }
@@ -30,21 +32,15 @@ submit.onclick = function(){
     date = document.getElementById("date").value;
     time = document.getElementById("time").value;
 
-    console.log(type)
-    console.log(date)
-    console.log(time)
-
     let checkboxes = document.getElementById("checkboxes")
-    let wholeTask = document.getElementById("wholeTask")
-    let taskText = document.getElementById("taskText")
-    let taskName = document.getElementById("taskTime")
-    let taskTime = document.getElementById("taskTime")
+    
    
     let newWholeTask = document.createElement("div")
     newWholeTask.id = "wholeTask"
     
     let newCheckbox = document.createElement("input");
     newCheckbox.type = "checkbox"
+    newCheckbox.style.backgroundColor = "black"
     
     let newTaskText = document.createElement("div")
     newTaskText.id = "taskText"
@@ -56,26 +52,43 @@ submit.onclick = function(){
     let newTaskTime = document.createElement("h2")
     newTaskTime.id = "taskTime"
 
+    let newEdit = document.createElement("div")
+    newEdit.id = "edit"
+
     if(document.getElementById("date").value === "" && document.getElementById("time").value === ""){
         console.log("gello empt")
         newTaskTime.textContent = ""
     }
     else{
-        newTaskTime.textContent = (`${time}               ${date}`);
+        newTaskTime.textContent = (`${time} ${date}`);
     }
 
     //make unable to create blank task
     //make name required but not date and time
-    // remove "on" when created without date and time
+    edit.style.display = ""
     
     checkboxes.appendChild(newWholeTask)
     newWholeTask.appendChild(newCheckbox)
     newWholeTask.appendChild(newTaskText)
+    newWholeTask.appendChild(edit)
     newTaskText.appendChild(newTaskName)
     newTaskText.appendChild(newTaskTime)
     newCheckbox.classList.add("checkbox")
 
+    let arr = [type, date, time]
+    console.log(arr)
+
+    //need to make seperate arrays for each checkbox
+
 }
+
+
+
+
+
+
+let darkMode = document.getElementById("darkMode")
+let lightMode = document.getElementById("darkMode")
 
 darkMode.onclick = function(){
     darkMode.style.backgroundColor = "black"

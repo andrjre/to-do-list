@@ -41,7 +41,23 @@ header{
 
 #wholeTask{
     display: flex;
-    gap:20px;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+}
+
+#edit{
+    width:200px;
+    height:200px;
+    background-color: red;
+}
+
+#edit:hover{
+    background-color: black;
+}
+
+#wholeTask:hover{
+    background-color: grey;
 }
 
 #taskText{
