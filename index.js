@@ -91,9 +91,11 @@ submit.onclick = function(){
 
 
     newEdit.onclick = function(){
-        console.log(newCustomize.parentElement)
+        console.log("edit")
     }
-
+    newRemove.onclick = function(){
+        console.log("remove")
+    }
     // figure out how to use queryselector 
 
 
@@ -117,13 +119,24 @@ submit.onclick = function(){
 
 
 let darkMode = document.getElementById("darkMode")
-let lightMode = document.getElementById("darkMode")
-
+let lightMode 
 darkMode.onclick = function(){
+    console.log("dark")
     darkMode.style.backgroundColor = "black"
     darkMode.style.borderColor = "white"
     darkMode.style.color = "white"
     body.style.backgroundColor = "black"
     body.style.color = "white"
+    darkMode.id = "lightMode"
+
+    let lightMode = document.getElementById("lightMode")
+
+    lightMode.onclick = function(){
+        console.log("glelo")
+        lightMode.style.backgroundColor = "white"
+        lightMode.style.borderColor = "black"
+        lightMode.style.color = "black"
+        darkMode.id = "darkMode"
+    }
 }
 
