@@ -57,13 +57,13 @@ submit.onclick = function(){
     newTaskTime.id = "taskTime"
 
     let newCustomize = document.createElement("div")
-    newCustomize. id = "customize"
+    newCustomize.classList.add("customize") 
 
     let newEdit = document.createElement("div")
-    newEdit.id = "edit"
+    newEdit.classList.add("edit")
 
     let newRemove = document.createElement("div")
-    newRemove.id = "remove"
+    newRemove.classList.add("remove")
 
     let newTaskContent = document.createElement("div")
     newTaskContent.id = "taskContent" 
@@ -75,16 +75,16 @@ submit.onclick = function(){
         newTaskTime.textContent = (`${time} ${date}`);
     }
     
-    edit.style.display = ""
-    remove.style.display = ""
+    newEdit.textContent = "Edit"
+    newRemove.textContent = "Remove"
     
     checkboxes.appendChild(newWholeTask)
     newWholeTask.appendChild(newCheckbox)
     newWholeTask.appendChild(newTaskContent)
     newTaskContent.appendChild(newTaskText)
     newTaskContent.appendChild(newCustomize)
-    newCustomize.appendChild(edit)
-    newCustomize.appendChild(remove)
+    newCustomize.appendChild(newEdit)
+    newCustomize.appendChild(newRemove)
     newTaskText.appendChild(newTaskName)
     newTaskText.appendChild(newTaskTime)
     newCheckbox.classList.add("checkbox")

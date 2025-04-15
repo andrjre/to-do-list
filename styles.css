@@ -48,28 +48,27 @@ header{
     width:100%;
 }
 
-#edit{
+.edit{
     width: 20px;
     height:20px;
     background-color: red;
 }
-#remove{
+.remove{
     width: 20px;
     height:20px;
     background-color: red;
     margin-right:20px;
-
 }
 
-#edit:hover{
+.edit:hover{
     background-color: black;
 }
 
-#remove:hover{
+.remove:hover{
     background-color: black;
 }
 
-#customize{
+.customize{
     display: flex;
     justify-content: flex-end;
     align-items: center;
