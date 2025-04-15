@@ -11,13 +11,8 @@ let wholeTask = document.getElementById("wholeTask")
 let taskText = document.getElementById("taskText")
 let taskName = document.getElementById("taskTime")
 let taskTime = document.getElementById("taskTime") 
-let edit = document.getElementById("edit")
-let remove = document.getElementById("remove")
-let customize = document.getElementById("customize")
 let taskContent = document.getElementById("taskContent")
 popup.style.display = "none";
-edit.style.display = "none"
-remove.style.display = "none"
 
 create.onclick = function(){
     
@@ -90,6 +85,25 @@ submit.onclick = function(){
     newCheckbox.classList.add("checkbox")
 
     
+    // new edit pressed 
+    // targets taskText within its taskContent parent element
+    //converts the div to input type text
+
+
+    newEdit.onclick = function(){
+        console.log(newCustomize.parentElement)
+    }
+
+    // figure out how to use queryselector 
+
+
+
+
+
+
+
+
+
     let arr = [type, date, time]
     console.log(arr)
 
