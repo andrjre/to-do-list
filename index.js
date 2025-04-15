@@ -14,6 +14,7 @@ let taskTime = document.getElementById("taskTime")
 let edit = document.getElementById("edit")
 let remove = document.getElementById("remove")
 let customize = document.getElementById("customize")
+let taskContent = document.getElementById("taskContent")
 popup.style.display = "none";
 edit.style.display = "none"
 remove.style.display = "none"
@@ -62,8 +63,10 @@ submit.onclick = function(){
     newEdit.id = "edit"
 
     let newRemove = document.createElement("div")
-    newEdit.id = "remove"
+    newRemove.id = "remove"
 
+    let newTaskContent = document.createElement("div")
+    newTaskContent.id = "taskContent" 
 
     if(document.getElementById("date").value === "" && document.getElementById("time").value === ""){
         newTaskTime.textContent = ""
@@ -77,8 +80,9 @@ submit.onclick = function(){
     
     checkboxes.appendChild(newWholeTask)
     newWholeTask.appendChild(newCheckbox)
-    newWholeTask.appendChild(newTaskText)
-    newWholeTask.appendChild(newCustomize)
+    newWholeTask.appendChild(newTaskContent)
+    newTaskContent.appendChild(newTaskText)
+    newTaskContent.appendChild(newCustomize)
     newCustomize.appendChild(edit)
     newCustomize.appendChild(remove)
     newTaskText.appendChild(newTaskName)

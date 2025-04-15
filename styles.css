@@ -43,7 +43,7 @@ header{
 
 #wholeTask{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     width:100%;
 }
@@ -72,6 +72,7 @@ header{
 #customize{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap:20px;
 }
 
@@ -79,10 +80,15 @@ header{
     background-color: grey;
 }
 
+
+#taskContent{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+}
+
 #taskText{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding-left:20px;
 }
 
 #create{
