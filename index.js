@@ -114,10 +114,6 @@ submit.onclick = function(){
 }
 
 
-
-
-
-
 let darkMode = document.getElementById("darkMode")
 let lightMode 
 darkMode.onclick = function(){
