@@ -92,9 +92,11 @@ submit.onclick = function(){
 
     newEdit.onclick = function(){
         console.log("edit")
+        
     }
     newRemove.onclick = function(){
         console.log("remove")
+        newWholeTask.innerHTML = ""
     }
     // figure out how to use queryselector 
 
