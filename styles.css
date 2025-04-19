@@ -5,6 +5,10 @@ body{
     box-sizing: border-box;
 }
 
+.darkModeToggle{
+    background-color: black;
+    color:white;
+}
 
 
 header{
@@ -12,12 +16,6 @@ header{
     gap:10px;
     align-items: center;
 }
-
-#dark-mode{
-    width:50;
-    height:50px
-}
-
 
 .top{
     display: flex;
