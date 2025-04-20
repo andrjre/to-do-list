@@ -43,15 +43,7 @@ submit.onclick = function(){
     newCheckbox.style.backgroundColor = "black"
     newCheckbox.checked = false
     
-    newCheckbox.onclick = function(){
-        if (newCheckbox.checked === true){
-            console.log("checked")
-        }
-        else(
-            console.log("unchecked")
-        )
-    }
-
+   
     let newTaskText = document.createElement("div")
     newTaskText.id = "taskText"
 
@@ -104,6 +96,19 @@ submit.onclick = function(){
     newRemove.onclick = function(){
         newWholeTask.innerHTML = ""
     }
+
+    newCheckbox.onclick = function(){
+        if (newCheckbox.checked === true){
+            console.log("checked")
+            newWholeTask.style.opacity = "20%"
+            newTaskText.classList.add("strikethrough")
+        }
+        else{
+            console.log("unchecked")
+            newWholeTask.style.opacity = "100%"
+        }
+    }
+
 }
 
 

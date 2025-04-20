@@ -188,3 +188,7 @@ header{
     cursor: pointer;
     background-color: green;
 }
+
+.strikethrough{
+    text-decoration: line-through;
+}
