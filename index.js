@@ -19,7 +19,6 @@ create.onclick = function(){
     document.getElementById("type").value = null;
     date = document.getElementById("date").value = null;
     time = document.getElementById("time").value = null;
-
     popup.style.display = "";
 }
 
@@ -27,9 +26,11 @@ create.onclick = function(){
 submit.onclick = function(){
 
     popup.style.display = "none"
+
     type = document.getElementById("type").value;
     date = document.getElementById("date").value;
     time = document.getElementById("time").value;
+ 
 
     let checkboxes = document.getElementById("checkboxes")
     
@@ -40,7 +41,17 @@ submit.onclick = function(){
     let newCheckbox = document.createElement("input");
     newCheckbox.type = "checkbox"
     newCheckbox.style.backgroundColor = "black"
+    newCheckbox.checked = false
     
+    newCheckbox.onclick = function(){
+        if (newCheckbox.checked === true){
+            console.log("checked")
+        }
+        else(
+            console.log("unchecked")
+        )
+    }
+
     let newTaskText = document.createElement("div")
     newTaskText.id = "taskText"
 
@@ -84,55 +95,21 @@ submit.onclick = function(){
     newTaskText.appendChild(newTaskTime)
     newCheckbox.classList.add("checkbox")
 
-    
-    // new edit pressed 
-    // targets taskText within its taskContent parent element
-    //converts the div to input type text
-
-
-    newEdit.onclick = function(){
-        console.log("edit")
-        
-    }
-    newRemove.onclick = function(){
-        console.log("remove")
-        newWholeTask.innerHTML = ""
-    }
-    // figure out how to use queryselector 
-
-
-
-
-
-
-
-
-
     let arr = [type, date, time]
     console.log(arr)
 
-    //need to make seperate arrays for each checkbox
-
+    newEdit.onclick = function(){
+        console.log("edit")
+    }
+    newRemove.onclick = function(){
+        newWholeTask.innerHTML = ""
+    }
 }
+
+
 
 
 let darkMode = document.getElementById("darkMode")
-
-darkMode.onclick = function(){
-    console.log("dark")
-    body.style.backgroundColor = "black"
-    body.style.color = "white"
-    darkMode.id = "lightMode"
-
-    let lightMode = document.getElementById("lightMode")
-
-    lightMode.onclick = function(){
-        console.log("light")
-        body.style.backgroundColor = "white"
-        body.style.color = "black"
-        lightMode.id = "darkMode"
-    }
-}
 
 darkMode.onclick = function(){
     body.classList.toggle("darkModeToggle")
