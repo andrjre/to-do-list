@@ -91,8 +91,14 @@ submit.onclick = function(){
     console.log(arr)
 
     newEdit.onclick = function(){
-        console.log("edit")
+        popup.style.display = "";
+        popupTitle = document.getElementById("popupTitle")
+        popupTitle.innerHTML = "Edit this task"
     }
+
+    // make this popup target current task and not create new one 
+    // new submit function for this and replace id of current button
+
     newRemove.onclick = function(){
         newWholeTask.innerHTML = ""
     }
@@ -106,10 +112,12 @@ submit.onclick = function(){
         else{
             console.log("unchecked")
             newWholeTask.style.opacity = "100%"
+            newTaskText.classList.remove("strikethrough")
         }
     }
 
 }
+
 
 
 
