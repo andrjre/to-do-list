@@ -13,6 +13,10 @@ let taskName = document.getElementById("taskTime")
 let taskTime = document.getElementById("taskTime") 
 let taskContent = document.getElementById("taskContent")
 popup.style.display = "none";
+button = document.getElementById("submit")
+
+let isEditing = false;
+let taskBeingEdited = null;
 
 create.onclick = function(){
     
@@ -20,11 +24,32 @@ create.onclick = function(){
     date = document.getElementById("date").value = null;
     time = document.getElementById("time").value = null;
     popup.style.display = "";
+    popupTitle.innerHTML = "Create a new task!"
+    button.innerHTML = "Submit"
+    let submit = document.getElementById("submit");
+    button.id = "submit"
+
 }
 
 
 submit.onclick = function(){
+    
+    button.id = "submit"
 
+    type = document.getElementById("type").value;
+    date = document.getElementById("date").value;
+    time = document.getElementById("time").value;
+    
+    if (isEditing && taskBeingEdited) {
+        taskBeingEdited.nameElem.textContent = type;
+        taskBeingEdited.timeElem.textContent = `${time} ${date}`;
+
+        isEditing = false;
+        taskBeingEdited = null;
+        popup.style.display = "none";
+        return;
+    }
+    
     popup.style.display = "none"
 
     type = document.getElementById("type").value;
@@ -91,13 +116,21 @@ submit.onclick = function(){
     console.log(arr)
 
     newEdit.onclick = function(){
-        popup.style.display = "";
-        popupTitle = document.getElementById("popupTitle")
-        popupTitle.innerHTML = "Edit this task"
-    }
 
-    // make this popup target current task and not create new one 
-    // new submit function for this and replace id of current button
+        popup.style.display = "";
+        popupTitle.innerHTML = "Edit this task";
+        button.innerHTML = "Edit";
+    
+        document.getElementById("type").value = newTaskName.textContent;
+        document.getElementById("date").value = date;
+        document.getElementById("time").value = time;
+    
+        isEditing = true;
+        taskBeingEdited = {
+            nameElem: newTaskName,
+            timeElem: newTaskTime
+        };
+    }
 
     newRemove.onclick = function(){
         newWholeTask.innerHTML = ""
