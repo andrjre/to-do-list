@@ -132,8 +132,12 @@ submit.onclick = function(){
         };
     }
 
+    //???
+
     newRemove.onclick = function(){
         newWholeTask.innerHTML = ""
+        arr = []
+        console.log(arr)
     }
 
     newCheckbox.onclick = function(){
