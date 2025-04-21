@@ -9,11 +9,11 @@ let time
 let checkboxCreate
 let wholeTask = document.getElementById("wholeTask")
 let taskText = document.getElementById("taskText")
-let taskName = document.getElementById("taskTime")
+let taskName = document.getElementById("taskName")
 let taskTime = document.getElementById("taskTime") 
 let taskContent = document.getElementById("taskContent")
 popup.style.display = "none";
-button = document.getElementById("submit")
+let button = document.getElementById("submit")
 
 let isEditing = false;
 let taskBeingEdited = null;
@@ -39,7 +39,7 @@ submit.onclick = function(){
     type = document.getElementById("type").value;
     date = document.getElementById("date").value;
     time = document.getElementById("time").value;
-    
+
     if (isEditing && taskBeingEdited) {
         taskBeingEdited.nameElem.textContent = type;
         taskBeingEdited.timeElem.textContent = `${time} ${date}`;
