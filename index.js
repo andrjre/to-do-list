@@ -159,5 +159,6 @@ let darkMode = document.getElementById("darkMode")
 
 darkMode.onclick = function(){
     body.classList.toggle("darkModeToggle")
+    popup.classList.toggle("darkModeToggle")
 }
 
