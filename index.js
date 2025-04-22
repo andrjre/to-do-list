@@ -132,8 +132,6 @@ submit.onclick = function(){
         };
     }
 
-    //???
-
     newRemove.onclick = function(){
         newWholeTask.innerHTML = ""
         arr = []
@@ -157,12 +155,12 @@ submit.onclick = function(){
 
 
 
-
-
+let popupDarkModeToggle = document.getElementById("popupDarkModeToggle")
+let darkModeToggle
 let darkMode = document.getElementById("darkMode")
 
 darkMode.onclick = function(){
     body.classList.toggle("darkModeToggle")
-    popup.classList.toggle("darkModeToggle")
+    popup.classList.toggle("popupDarkModeToggle")
 }
 
