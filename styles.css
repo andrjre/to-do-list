@@ -149,9 +149,7 @@ header{
     gap:20px;
     width:600px;
     height:200px;
-    background-color: white;
-    border: 2px solid black;
-    color:black;
+    border: 2px solid;
     border-radius: 50px;;
     padding:20px;
     padding-top: 0;
