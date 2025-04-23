@@ -143,12 +143,14 @@ submit.onclick = function(){
             console.log("checked")
             newWholeTask.style.opacity = "20%"
             newTaskText.classList.add("strikethrough")
+            newEdit.style.pointerEvents = "none"
         }
         else{
             console.log("unchecked")
             newWholeTask.style.opacity = "100%"
             newEdit.disabled = false;
             newTaskText.classList.remove("strikethrough")
+            newEdit.style.pointerEvents = ""
         }
     }
 
@@ -164,8 +166,6 @@ darkMode.onclick = function(){
     body.classList.toggle("darkModeToggle")
     popup.classList.toggle("popupDarkModeToggle")
 }
-
-
 
 //change dark mode button name on toggle
 // disabled edit button on checked items 
