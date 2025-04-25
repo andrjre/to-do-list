@@ -234,3 +234,20 @@ header{
 .strikethrough{
     text-decoration: line-through;
 }
+
+
+
+#darkMode{
+    border-radius: 100px;
+    border-style: none;
+}
+
+#darkMode:hover{
+    background-color: rgb(60, 207, 60);
+}
+
+.buttonDarkModeToggle{
+    background-color: rgb(20, 20, 20);
+    color:white;
+    border-color: white;
+}

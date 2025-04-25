@@ -160,11 +160,21 @@ let darkModeStatus = false;
 
 let popupDarkModeToggle = document.getElementById("popupDarkModeToggle")
 let darkMode = document.getElementById("darkMode")
+darkMode.textContent = "Dark mode"
 
 darkMode.onclick = function(){
+    let darkMode = document.getElementById("darkMode")
     darkModeStatus = true
     body.classList.toggle("darkModeToggle")
     popup.classList.toggle("popupDarkModeToggle")
+    darkMode.classList.toggle("buttonDarkModeToggle")
+
+    if(darkMode.textContent === "Dark mode"){
+        darkMode.textContent = "Light mode"
+    }
+    else{
+        darkMode.textContent = "Dark mode"
+    }
 }
 
 //change dark mode button name on toggle
