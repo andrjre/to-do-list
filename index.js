@@ -112,8 +112,17 @@ submit.onclick = function(){
     newTaskText.appendChild(newTaskTime)
     newCheckbox.classList.add("checkbox")
 
-    let arr = [type, date, time]
-    console.log(arr)
+    let taskObject = {
+        id: crypto.randomUUID(),
+        name: type,
+        date: date,
+        time: time,
+    }
+
+    todoArray.push(taskObject)
+    console.log(todoArray)
+    localStorage.setItem("todos", JSON.stringify(todoArray))
+
 
     newEdit.onclick = function(){
 
@@ -176,5 +185,18 @@ darkMode.onclick = function(){
     }
 }
 
-//change dark mode button name on toggle
-// disabled edit button on checked items 
+//this is where i am working 
+
+let todoArray = JSON.parse(localStorage.getItem("todos")) || [];
+console.log(todoArray)
+
+let renderTasks = function(){
+    for(let i = 0; i < todoArray.length ; i++){
+        let oldTask = document.createElement("div")
+        oldTask.textContent = todoArray[i].name
+        oldTask.style.backgroundColor = "green"
+        checkboxes.appendChild(oldTask)
+    }
+}
+
+renderTasks()
