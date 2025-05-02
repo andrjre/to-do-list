@@ -239,15 +239,18 @@ header{
 
 #darkMode{
     border-radius: 100px;
-    border-style: none;
+    transition: all ease-in-out .2s;
 }
 
 #darkMode:hover{
     background-color: rgb(60, 207, 60);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .buttonDarkModeToggle{
     background-color: rgb(20, 20, 20);
     color:white;
     border-color: white;
+    border:2px solid white;
 }

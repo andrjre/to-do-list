@@ -153,7 +153,6 @@ submit.onclick = function(){
             newEdit.style.pointerEvents = ""
         }
     }
-
 }
 
 let darkModeStatus = false;
