@@ -240,8 +240,8 @@ let renderTasks = function(){
 
         newRemove.onclick = function(){
             newWholeTask.innerHTML = ""
-            todoArray
-            localStorage.removeItem(todoArray)
+            todoArray.splice(i,1)
+            localStorage.setItem("todos", JSON.stringify(todoArray))
             console.log(todoArray)
         }
     }
