@@ -143,8 +143,6 @@ submit.onclick = function(){
 
     newRemove.onclick = function(){
         newWholeTask.innerHTML = ""
-        arr = []
-        console.log(arr)
     }
 
     newCheckbox.onclick = function(){
@@ -193,9 +191,59 @@ console.log(todoArray)
 let renderTasks = function(){
     for(let i = 0; i < todoArray.length ; i++){
         let oldTask = document.createElement("div")
-        oldTask.textContent = todoArray[i].name
-        oldTask.style.backgroundColor = "green"
         checkboxes.appendChild(oldTask)
+   
+        let newWholeTask = document.createElement("div")
+        newWholeTask.id = "wholeTask"
+        
+        let newCheckbox = document.createElement("input");
+        newCheckbox.type = "checkbox"
+        newCheckbox.style.backgroundColor = "black"
+        newCheckbox.checked = false
+        
+       
+        let newTaskText = document.createElement("div")
+        newTaskText.id = "taskText"
+    
+        let newTaskName = document.createElement("h1")
+        newTaskName.id = "taskName"
+        newTaskName.textContent = type;
+    
+        let newTaskTime = document.createElement("h2")
+        newTaskTime.id = "taskTime"
+    
+        let newCustomize = document.createElement("div")
+        newCustomize.classList.add("customize") 
+    
+        let newEdit = document.createElement("div")
+        newEdit.classList.add("edit")
+    
+        let newRemove = document.createElement("div")
+        newRemove.classList.add("remove")
+    
+        let newTaskContent = document.createElement("div")
+        newTaskContent.id = "taskContent" 
+
+        checkboxes.appendChild(newWholeTask)
+        newWholeTask.appendChild(newCheckbox)
+        newWholeTask.appendChild(newTaskContent)
+        newTaskContent.appendChild(newTaskText)
+        newTaskContent.appendChild(newCustomize)
+        newCustomize.appendChild(newEdit)
+        newCustomize.appendChild(newRemove)
+        newTaskText.appendChild(newTaskName)
+        newTaskText.appendChild(newTaskTime)
+        newCheckbox.classList.add("checkbox")
+
+        newTaskName.textContent = todoArray[i].name
+        newTaskTime.textContent = todoArray[i].time
+
+        newRemove.onclick = function(){
+            newWholeTask.innerHTML = ""
+            todoArray
+            localStorage.removeItem(todoArray)
+            console.log(todoArray)
+        }
     }
 }
 
