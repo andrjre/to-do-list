@@ -1,3 +1,5 @@
+let todoArray = JSON.parse(localStorage.getItem("todos")) || [];
+console.log(todoArray)
 
 let create = document.getElementById("create");
 let popup = document.getElementById("popup");
@@ -143,6 +145,8 @@ submit.onclick = function(){
 
     newRemove.onclick = function(){
         newWholeTask.innerHTML = ""
+        todoArray.splice(newWholeTask)
+        console.log(todoArray)
     }
 
     newCheckbox.onclick = function(){
@@ -185,11 +189,11 @@ darkMode.onclick = function(){
 
 //this is where i am working 
 
-let todoArray = JSON.parse(localStorage.getItem("todos")) || [];
-console.log(todoArray)
+
 
 let renderTasks = function(){
-    for(let i = 0; i < todoArray.length ; i++){
+    checkboxes.innerHTML = ""
+    for(let i = todoArray.length - 1; i >= 0; i--){
         let oldTask = document.createElement("div")
         checkboxes.appendChild(oldTask)
    
